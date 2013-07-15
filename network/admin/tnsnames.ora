@@ -1,0 +1,29 @@
+CWRKTEST.world =
+    (description=
+     (failover=on)
+     (load_balance=on)
+     (address=(protocol=tcp)(host=ucsuatrac1-vip)(port=1531))
+     (address=(protocol=tcp)(host=ucsuatrac2-vip)(port=1531))
+     (connect_data=
+      (SERVER = DEDICATED)
+        (service_name=cwrktest.ci.raleigh.nc.us)
+          (failover_mode=
+              (type=select)
+              (method=basic)
+              (retries=20)
+              (delay=5))))
+ 
+ 
+CWORKDEV.WORLD =
+  (DESCRIPTION =
+    (ADDRESS =
+      (PROTOCOL = TCP)
+      (HOST = ucsdevrac1)
+      (PORT = 1531)
+    )
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SID = cworkdev)
+    )
+  )
+
